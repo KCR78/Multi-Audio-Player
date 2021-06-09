@@ -1,25 +1,46 @@
-import logo from './logo.svg';
+import React, { useState } from 'react'
 import './App.css';
+import 'react-h5-audio-player/lib/styles.css';
+import 'audio-react-recorder/dist/index.css'
+import CustomAudioRecorder from './Components/AudioRecorder'
+import { CustomAudioPlayer } from './Components/AudioPlayer';
 
 function App() {
+
+  const [showPlayer, setShowPlayer] = useState('');
+
+  const onChangeValue = (event) => {
+    setShowPlayer(event.target.id);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='total-area'>
+      <div className='nav-box'>
+        <div className="btn-group" role="group" aria-label="Basic radio toggle button group" onChange={onChangeValue}>
+          <input type="radio" className="btn-check" name="btnradio" id="recorder" />
+          <label className="btn btn-outline-secondary" htmlFor="recorder">Audio Recorder</label>
+
+          <input type="radio" className="btn-check" name="btnradio" id="player1" />
+          <label className="btn btn-outline-secondary" htmlFor="player1">Audio Player (Existing Audio)</label>
+
+          <input type="radio" className="btn-check" name="btnradio" id="player2" />
+          <label className="btn btn-outline-secondary" htmlFor="player2">Audio Player (Local Audio)</label>
+        </div>
+      </div>
+
+      <hr className='hr-line' />
+
+      <div className='play-boxes'>
+
+        {showPlayer === 'recorder' ? <CustomAudioRecorder />
+          : showPlayer === 'player1' ? <CustomAudioPlayer />
+            : showPlayer === 'player2' ? 'Comming Soon'
+              : 'Please Choose One...'
+        }
+
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
