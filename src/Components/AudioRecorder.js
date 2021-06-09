@@ -52,6 +52,15 @@ class CustomAudioRecorder extends React.Component {
                     <button type="button" className="btn btn-danger" onClick={this.stop}><i className="far fa-stop-circle"></i> Stop Recording</button>
                 </div>
 
+                <div className="rec-status">Status :&nbsp;
+                    <label>
+                        {this.state.recordState === 'start' ? 'Listening...'
+                            : this.state.recordState === 'pause' ? 'Pause'
+                                : this.state.recordState === 'stop' ? 'Recording Ended'
+                                    : null
+                        }
+                    </label>
+                </div>
 
                 <AudioReactRecorder
                     state={recordState}
