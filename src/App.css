@@ -3,13 +3,13 @@ html, body{font-size: 14px; font-family: 'Source Sans Pro', sans-serif; font-wei
 
 .btn {padding: 10px 20px;}
 .btn:focus{box-shadow: none;}
-.file-btn{padding: .375rem 1.75rem;}
+.upload-btn{padding: .375rem 1.25rem;}
 .form-control:focus, .form-control:active {box-shadow: none; border-color: #d0d6dc;}
 
 .total-area {
     margin: 20px 20px;
     padding: 30px;
-    height: 93vh;
+    min-height: 93vh;
     border-radius: 30px;
     box-shadow: 0px 5px 20px 5px rgb(183, 178, 189);
 }
@@ -27,24 +27,29 @@ html, body{font-size: 14px; font-family: 'Source Sans Pro', sans-serif; font-wei
     align-items: center;
 }
 
-
 .audio-react-recorder canvas{
     width: 100%;
+    height: 250px;
 }
 
-.music-box {
+.music-box, .music-box1, .music-box2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: 1px solid rgb(0 0 0 / 10%);
     width: 600px;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px 1px #4b7cd8;
+    box-shadow: 1px 1px 10px 1px #ff7280;
     padding: 16px 16px;
 }
 
+.music-box1 {box-shadow: 1px 1px 10px 1px #198754;}
+.music-box2 {box-shadow: 1px 1px 10px 1px #084298;}
+
 .rec-status {
     padding: 5px;
+    background-color: #ffe1e4;
+    border-radius: 8px;
 }
 
 .rec-status label{
@@ -60,11 +65,9 @@ html, body{font-size: 14px; font-family: 'Source Sans Pro', sans-serif; font-wei
 
 .playlist{
     width: 100%;
-    height: 300px;
     border-left: 1px solid #e4e4eb;
     border-top: 1px solid #e4e4eb;
     border-right: 1px solid #e4e4eb;
-    padding: 5px;
 }
 
 .playlist-header{
@@ -75,15 +78,27 @@ html, body{font-size: 14px; font-family: 'Source Sans Pro', sans-serif; font-wei
     background-color: #198754;
     color: ghostwhite;
 }
+.player2 {background-color: #084298;}
 
-.items, .l-items { 
+.list-items {
+    height: 250px;
+    overflow-y: scroll;
+}
+
+.items, .p2-items { 
     border-bottom: 1px solid #e4e4eb;
     margin: 0;
-    padding: 2px;
+    padding: 2px 5px;
     cursor: pointer;
 }
 
 .active, .items:hover {
     background-color: #c9f8e2;
     color: #198754;
+}
+
+
+.p2-active, .p2-items:hover {
+    background-color: #c2dbfe;
+    color: #084298;
 }

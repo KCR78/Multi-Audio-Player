@@ -3,6 +3,7 @@ import './App.css';
 import 'react-h5-audio-player/lib/styles.css';
 import 'audio-react-recorder/dist/index.css'
 import CustomAudioRecorder from './Components/AudioRecorder'
+import { OnlineAudioPlayer } from './Components/OnlineAudioPlayer'
 import { CustomAudioPlayer } from './Components/AudioPlayer';
 
 function App() {
@@ -24,7 +25,7 @@ function App() {
           <label className="btn btn-outline-secondary" htmlFor="player1">Audio Player (Existing Audio)</label>
 
           <input type="radio" className="btn-check" name="btnradio" id="player2" />
-          <label className="btn btn-outline-secondary" htmlFor="player2">Next Player...</label>
+          <label className="btn btn-outline-secondary" htmlFor="player2">Audio Player (Online Audio)</label>
         </div>
       </div>
 
@@ -34,7 +35,7 @@ function App() {
 
         {showPlayer === 'recorder' ? <CustomAudioRecorder />
           : showPlayer === 'player1' ? <CustomAudioPlayer />
-            : showPlayer === 'player2' ? 'Comming Soon'
+            : showPlayer === 'player2' ? <OnlineAudioPlayer />
               : 'Please Choose One...'
         }
 
@@ -43,4 +44,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

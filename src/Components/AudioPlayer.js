@@ -30,7 +30,7 @@ export const CustomAudioPlayer = () => {
         setCurrentMusicIndex(data)
     }
     return (
-        <div className='music-box'>
+        <div className='music-box1'>
             <div className='playlist'>
                 <div className='playlist-header'>Play List</div>
                 <div className='list-items'>
