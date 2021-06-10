@@ -24,7 +24,7 @@ function App() {
           <label className="btn btn-outline-secondary" htmlFor="player1">Audio Player (Existing Audio)</label>
 
           <input type="radio" className="btn-check" name="btnradio" id="player2" />
-          <label className="btn btn-outline-secondary" htmlFor="player2">Audio Player (Local Audio)</label>
+          <label className="btn btn-outline-secondary" htmlFor="player2">Next Player...</label>
         </div>
       </div>
 
